@@ -1,0 +1,15 @@
+{
+  "name": "rest",
+  "version": "0.0.0",
+  "description": "Standard rest",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Redstone.Zhao",
+  "license": "MIT",
+  "dependencies": {
+    "restify": "~2.6.1",
+    "underscore": "~1.5.2"
+  }
+}
