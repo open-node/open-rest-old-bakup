@@ -4,7 +4,7 @@ module.exports = {
   port: 7788,
   sources: [{
     name: 'user',
-    methods: ['get', 'post', 'put', 'del'],
+    methods: ['index', 'get', 'post', 'put', 'del'],
     attributes: {
       id: 'autoincreament',
       name: {
@@ -20,6 +20,10 @@ module.exports = {
         type: 'enum',
         values: ['male', 'female'],
         default: 'male'
+      },
+      birthday: {
+        type: 'date',
+        range: ['1900-01-01', '2014-01-01']
       },
       credit: {
         type: 'number',
