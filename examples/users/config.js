@@ -17,6 +17,7 @@ module.exports = {
     attributes: {
       id: {
         type: 'integer',
+        unsigned: true,
         primaryKey: true,
         autoIncrement: true
       },
@@ -48,10 +49,17 @@ module.exports = {
       },
       credit: {
         type: 'integer',
+        unsigned: true,
         defaultValue: 10,
         validate: {
           min: 0,
           max: 999999999
+        }
+      },
+      intro: {
+        type: 'text',
+        validate: {
+          len: [0, 1000]
         }
       }
     }
