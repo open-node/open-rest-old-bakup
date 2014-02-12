@@ -10,7 +10,20 @@ module.exports = {
   // add 添加资源
   // modify 修改某个资源描述
   // remove 移除某个资源
-  methods: ['list', 'detail', 'add', 'modify', 'remove'],
+  methods: [{
+    method: 'list',
+    roles: ['admin']
+  }, {
+    method: 'detail',
+  }, {
+    method: 'add',
+  }, {
+    method: 'modify',
+    roles: ['__self', 'admin']
+  }, {
+    method: 'remove',
+    roles: ['admin']
+  }],
 
   // 资源属性的定义，完全参考sequelize 的model 的define
   // type : integer <=> Sequelize.INTEGER

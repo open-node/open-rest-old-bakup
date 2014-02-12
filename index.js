@@ -22,7 +22,7 @@ module.exports = function(opts) {
   // 初始化资源
   // 内部会初始化资源的模型和对应方法的控制器
   _.each(opts.resources, function(resource) {
-    new Rest(resource, server, sequelize);
+    new Rest(resource, server, sequelize, opts);
   });
 
   // 设置监听

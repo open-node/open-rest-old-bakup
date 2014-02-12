@@ -35,6 +35,11 @@ module.exports = {
         isEmail: true
       }
     },
+    role: {
+      type: 'enum',
+      values: ['user', 'admin'],
+      defaultValue: 'user',
+    },
     gender: {
       type: 'enum',
       values: ['male', 'female'],
