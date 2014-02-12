@@ -6,7 +6,7 @@ module.exports = {
   version: '0.0.1',
   port: 7788,
   db: {
-    name: 'example_blog',
+    name: 'example_user',
     user: 'root',
     pass: '123457',
     dialect: 'mysql',
