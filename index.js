@@ -1,7 +1,7 @@
-var restify   = require('restify')
-  , _         = require("underscore")
-  , Rest      = require('./lib/rest')
-  , utils     = require('./lib/utils');
+var restify     = require('restify')
+  , _           = require("underscore")
+  , Rest        = require('./lib/rest')
+  , utils       = require('./lib/utils');
 
 module.exports = function(opts) {
 
@@ -18,6 +18,13 @@ module.exports = function(opts) {
   server.use(restify.acceptParser(server.acceptable));
   server.use(restify.queryParser());
   server.use(restify.bodyParser());
+
+  // 自定义中间件
+  if(opts.middleWares) {
+    _.each(opts.middleWares, function(middleWare) {
+      server.use(middleWare(opts));
+    });
+  }
 
   // 初始化资源
   // 内部会初始化资源的模型和对应方法的控制器
