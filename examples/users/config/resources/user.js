@@ -12,6 +12,9 @@ module.exports = {
   // remove 移除某个资源
   methods: ['list', 'detail', 'add', 'modify', 'remove'],
 
+  // 钩子
+  hooks: {},
+
   // 资源属性的定义，完全参考sequelize 的model 的define
   // type : integer <=> Sequelize.INTEGER
   attributes: {

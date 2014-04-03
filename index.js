@@ -1,9 +1,12 @@
 var restify     = require('restify')
-  , _           = require("underscore")
+  , _           = require('underscore')
   , Rest        = require('./lib/rest')
-  , utils       = require('./lib/utils');
+  , utils       = require('./lib/utils')
+  , defaults    = require('./lib/defaults');
 
 module.exports = function(opts) {
+
+  opts = _.defaults(opts, defaults);
 
   // 初始化sequelize实例
   var sequelize = utils.initDB(opts.db);

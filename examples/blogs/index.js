@@ -1,4 +1,4 @@
 var rest = require("../../index")
-  , opts = require("./config");
+  , opts = require("./app");
 
 rest(opts);
