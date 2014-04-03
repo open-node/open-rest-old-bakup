@@ -8,6 +8,12 @@ module.exports = function(opts) {
 
   opts = _.defaults(opts, defaults);
 
+  // 将rest库包的个模块附在opts上，方便各处使用
+  opts.rest = {
+    utils: utils,
+    Rest: Rest
+  };
+
   // 初始化sequelize实例
   var sequelize = utils.initDB(opts.db);
 

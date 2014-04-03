@@ -1,16 +1,16 @@
-## rest ![npm](https://badge.fury.io/js/rest.png)
+## open-rest ![npm](https://badge.fury.io/js/open-rest.png)
 
-Standard rest
+Standard rest server, Base on restify and sequelize
 
 ### Installation
 ````
-$ [sudo] npm install rest
+$ [sudo] npm install open-rest
 ````
 
 
 ### Example
 ````javascript
-var rest = require('rest');
+var open-rest = require('open-rest');
 ````
 
 ### API
