@@ -48,10 +48,11 @@ module.exports = function(opts) {
     );
   });
 
+  console.log(opts.middleWares);
   // 自定义中间件
   if(opts.middleWares) {
     _.each(opts.middleWares, function(middleWare) {
-      server.use(middleWare(opts));
+      server.use(middleWare.action(opts));
     });
   }
 
