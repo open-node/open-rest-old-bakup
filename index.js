@@ -2,8 +2,8 @@ var restify     = require('restify')
   , _           = require('underscore')
   , Rest        = require('./lib/rest')
   , utils       = require('./lib/utils')
-  , hooks       = require('./hooks')
-  , middleWares = require('./middle-wares')
+  , hooks       = require('./lib/hooks')
+  , middleWares = require('./lib/middle-wares')
   , defaults    = require('./lib/defaults');
 
 module.exports = function(opts) {
