@@ -61,6 +61,11 @@ module.exports = function(opts) {
     new Rest(resource, server, sequelize, opts);
   });
 
+  // 监听错误，打印出来，方便调试
+  server.on('error', function(error) {
+    console.error(error);
+  });
+
   // 设置监听
   server.listen(opts.port || 8080, function () {
     console.log('%s listening at %s', server.name, server.url);
