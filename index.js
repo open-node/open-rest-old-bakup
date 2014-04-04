@@ -19,13 +19,16 @@ module.exports = function(opts) {
   // 初始化sequelize实例
   var sequelize = utils.initDB(opts.db);
 
+  // 构建全部的model以及他们之间的关系
+  utils.initModels(opts.resources, sequelize);
+
   // 创建web服务
   var server = restify.createServer({
     name: opts.name,
     version: opts.version
   });
 
-  // 设置中间件
+  // 设置系统中间件
   server.use(restify.acceptParser(server.acceptable));
   server.use(restify.queryParser());
   server.use(restify.bodyParser());
