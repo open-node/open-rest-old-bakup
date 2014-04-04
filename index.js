@@ -2,6 +2,8 @@ var restify     = require('restify')
   , _           = require('underscore')
   , Rest        = require('./lib/rest')
   , utils       = require('./lib/utils')
+  , hooks       = require('./hooks')
+  , middleWares = require('./middle-wares')
   , defaults    = require('./lib/defaults');
 
 module.exports = function(opts) {
@@ -27,6 +29,24 @@ module.exports = function(opts) {
   server.use(restify.acceptParser(server.acceptable));
   server.use(restify.queryParser());
   server.use(restify.bodyParser());
+
+  // 合并系统自带的middleWares和用户自定义的middleWares
+  // 为了接下来的的处理统一
+  opts.middleWares = utils.mergeFns(
+    middleWares,
+    opts.middleWares,
+    opts.switchs.middleWares
+  );
+
+  // 合并系统自带的hooks和用户自定义的hooks
+  // 为了接下来的的处理统一
+  _.each(['beforeActions'], function(name) {
+    opts.hooks = utils.mergeFns(
+      hooks[name] || [],
+      opts.hooks[name] || [],
+      opts.switchs.hooks[name] || {}
+    );
+  });
 
   // 自定义中间件
   if(opts.middleWares) {
