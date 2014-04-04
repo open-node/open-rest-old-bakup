@@ -41,14 +41,13 @@ module.exports = function(opts) {
   // 合并系统自带的hooks和用户自定义的hooks
   // 为了接下来的的处理统一
   _.each(['beforeActions'], function(name) {
-    opts.hooks = utils.mergeFns(
+    opts.hooks[name] = utils.mergeFns(
       hooks[name] || [],
       opts.hooks[name] || [],
       opts.switchs.hooks[name] || {}
     );
   });
 
-  console.log(opts.middleWares);
   // 自定义中间件
   if(opts.middleWares) {
     _.each(opts.middleWares, function(middleWare) {
