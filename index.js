@@ -70,6 +70,12 @@ module.exports = {
       });
     }
 
+    // 提供资源配置的接口，供客户端使用
+    server.get('/resources', function(req, res, next) {
+      res.send(200, opts.resources);
+      next();
+    });
+
     // 初始化资源
     // 内部会初始化资源的模型和对应方法的控制器
     _.each(opts.resources, function(resource) {
