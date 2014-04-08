@@ -82,6 +82,9 @@ module.exports = {
       new Rest(resource, server, sequelize, opts);
     });
 
+    // 提供apis接口让用户清楚目前提供的接口列表
+    Rest.apis(server, '/apis');
+
     // 监听错误，打印出来，方便调试
     server.on('error', function(error) {
       console.error(error);
