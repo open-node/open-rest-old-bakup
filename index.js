@@ -31,6 +31,11 @@ module.exports = {
     // 初始化sequelize实例
     var sequelize = utils.initDB(opts.db);
 
+    // 设置对外公开的资源以及属性
+    opts.pubResources = utils.clone(opts.resources, function(value, key) {
+      return key.toString()[0] === '_';
+    }, []);
+
     // 构建全部的model以及他们之间的关系
     utils.initModels(opts.resources, sequelize);
 
@@ -72,7 +77,7 @@ module.exports = {
 
     // 提供资源配置的接口，供客户端使用
     server.get('/resources', function(req, res, next) {
-      res.send(200, opts.resources);
+      res.send(200, opts.pubResources);
       next();
     });
 
@@ -86,7 +91,7 @@ module.exports = {
     Rest.apis(server, '/apis');
 
     // 监听错误，打印出来，方便调试
-    server.on('error', function(error) {
+    server.on('uncaughtException', function(req, res, route, error) {
       console.error(error);
     });
 
