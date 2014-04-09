@@ -55,7 +55,7 @@ module.exports = {
 
     // 合并系统自带的hooks和用户自定义的hooks
     // 为了接下来的的处理统一
-    _.each(['beforeActions'], function(name) {
+    _.each(['beforeActions', 'handleList'], function(name) {
       opts.hooks[name] = utils.mergeFns(
         hooks[name] || [],
         opts.hooks[name] || [],
