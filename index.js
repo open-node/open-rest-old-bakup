@@ -41,9 +41,11 @@ module.exports = {
 
     // 创建web服务
     var server = restify.createServer({
-      name: opts.name,
-      version: opts.version
+      name: opts.basics.name,
+      version: opts.basics.version
     });
+    // 将server复制给opts，方便用户自己去做一些事情
+    opts.server = server;
 
     // 设置系统中间件
     server.use(restify.acceptParser(server.acceptable));
@@ -77,7 +79,7 @@ module.exports = {
 
     // 提供资源配置的接口，供客户端使用
     server.get('/resources', function(req, res, next) {
-      res.send(200, opts.pubResources);
+      res.send(200, opts.resources);
       next();
     });
 
@@ -96,9 +98,11 @@ module.exports = {
     });
 
     // 设置监听
-    server.listen(opts.port || 8080, function () {
+    server.listen(opts.basics.port || 8080, function () {
       console.log('%s listening at %s', server.name, server.url);
     });
+
+    return opts;
 
   }
 };
