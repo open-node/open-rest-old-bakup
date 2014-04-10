@@ -10,7 +10,10 @@ $ [sudo] npm install open-rest
 
 ### Example
 ````javascript
-var open-rest = require('open-rest');
+var rest = require('open-rest'),
+  , options = require('./app');
+
+rest.init(options);
 ````
 
 ### API
