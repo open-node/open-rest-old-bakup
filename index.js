@@ -20,7 +20,19 @@ module.exports = {
 
   init: function(opts) {
 
-    opts = _.defaults(opts, defaults);
+    if(opts.basics) {
+      _.defaults(opts.basics, defaults.basics);
+    }
+
+    if(opts.constant) {
+      _.defaults(opts.constant, defaults.constant);
+    }
+
+    if(opts.switchs) {
+      _.defaults(opts.switchs, defaults.switchs);
+    }
+
+    _.defaults(opts, defaults);
 
     // 将rest库包的个模块附在opts上，方便各处使用
     opts.rest = {
@@ -95,6 +107,7 @@ module.exports = {
     // 监听错误，打印出来，方便调试
     server.on('uncaughtException', function(req, res, route, error) {
       console.error(error);
+      console.log(error.stack);
     });
 
     // 设置监听
