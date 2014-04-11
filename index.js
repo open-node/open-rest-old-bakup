@@ -51,6 +51,17 @@ module.exports = {
     // 构建全部的model以及他们之间的关系
     utils.initModels(opts.resources, sequelize);
 
+    // 将处理后的methods重新赋值给pubResources
+    _.each(opts.pubResources, function(pubResource, key) {
+      pubResource.methods = opts.resources[key].methods;
+      if(!opts.pubResources[key].associations) {
+        return;
+      }
+      _.each(opts.pubResources[key].associations, function(association, i) {
+        association.methods = opts.resources[key].associations[i].methods;
+      });
+    });
+
     // 创建web服务
     var server = restify.createServer({
       name: opts.basics.name,
@@ -91,7 +102,7 @@ module.exports = {
 
     // 提供资源配置的接口，供客户端使用
     server.get('/resources', function(req, res, next) {
-      res.send(200, opts.resources);
+      res.send(200, opts.pubResources);
       next();
     });
 
