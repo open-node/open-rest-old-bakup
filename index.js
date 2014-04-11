@@ -118,7 +118,8 @@ module.exports = {
     // 监听错误，打印出来，方便调试
     server.on('uncaughtException', function(req, res, route, error) {
       console.error(error);
-      console.log(error.stack);
+      console.error(error.stack);
+      res.send(500, req.i18n.t('Internal error'));
     });
 
     // 设置监听
