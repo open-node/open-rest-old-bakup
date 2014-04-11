@@ -49,7 +49,7 @@ module.exports = {
     }, []);
 
     // 构建全部的model以及他们之间的关系
-    utils.initModels(opts.resources, sequelize);
+    utils.initModels(opts.resources, sequelize, opts);
 
     // 将处理后的methods重新赋值给pubResources
     _.each(opts.pubResources, function(pubResource, key) {

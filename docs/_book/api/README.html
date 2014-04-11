@@ -1,0 +1,457 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
+        
+        <meta charset="UTF-8">
+        <title>自有REST接口 | Open-rest</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="open-node">
+        <meta name="description" content="Book generated using GitBook">
+        <meta name="keywords" content="gitbook,github" >
+        <meta name="generator" content="www.gitbook.io">
+
+        
+        <link rel="next" href="../utils/README.html" />
+        
+        
+        <link rel="prev" href="../basics/module.html" />
+        
+
+        <meta property="og:title" content="自有REST接口 | Open-rest">
+        <meta property="og:site_name" content="Open-rest">
+        <meta property="og:type" content="book">
+        <meta property="og:locale" content="en_US">
+
+        <meta property="book:author" content="https://github.com/open-node">
+        <meta property="book:tag" content="GitBook">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="../gitbook/style.css">
+
+        <script type="text/javascript">
+        (function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+        for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
+        mixpanel.init("01eb2b950ae09a5fdb15a98dcc5ff20e");
+        </script>
+        
+    </head>
+    <body>
+        
+<div class="book with-summary" data-github="open-node/open-rest" data-level="3.3">
+    <div class="book-header">
+    <!-- Actions Left -->
+    <a href="https://github.com/open-node/open-rest" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
+    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
+
+    <!-- Actions Right -->
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+
+    <a href="https://github.com/open-node/open-rest/stargazers" target="_blank" class="btn pull-right count-star"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/open-node/open-rest/watchers" target="_blank" class="btn pull-right count-watch"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+
+
+    <!-- Title -->
+    <h1><a href="../README.html" >Open-rest</a></h1>
+</div>
+    <div class="book-summary">
+    <ul class="summary">
+        <li>
+            <a href="https://github.com/open-node" target="blank">About the author</a>
+        </li>
+        <li>
+            <a href="https://github.com/open-node/open-rest/issues" target="blank">Questions and Issues</a>
+        </li>
+        <li>
+            <a href="https://github.com/open-node/open-rest/edit/master/api/README.md" target="blank">Edit and Contribute</a>
+        </li>
+        <li class="divider"></li>
+        <li data-level="0">
+            <a href="../README.html"><i class="fa fa-check"></i> Introduction</a>
+        </li>
+        
+            <li  data-level="1">
+                
+                <a href="../intro/README.html">
+                    <i class="fa fa-check"></i> <b>1)</b> 简介
+                </a>
+                
+                
+            </li>
+        
+            <li  data-level="2">
+                
+                <a href="../install/README.html">
+                    <i class="fa fa-check"></i> <b>2)</b> 安装
+                </a>
+                
+                
+            </li>
+        
+            <li  data-level="3">
+                
+                <a href="../basics/README.html">
+                    <i class="fa fa-check"></i> <b>3)</b> 基础知识
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="3.1">
+                            
+                            <a href="../basics/flow.html">
+                                <i class="fa fa-check"></i> <b>3.1)</b> 流程图
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.2">
+                            
+                            <a href="../basics/module.html">
+                                <i class="fa fa-check"></i> <b>3.2)</b> 模块组成
+                            </a>
+                            
+                        </li>
+                    
+                        <li class="active" data-level="3.3">
+                            
+                            <a href="../api/README.html">
+                                <i class="fa fa-check"></i> <b>3.3)</b> 自有REST接口
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="4">
+                
+                <a href="../utils/README.html">
+                    <i class="fa fa-check"></i> <b>4)</b> utils
+                </a>
+                
+                
+            </li>
+        
+            <li  data-level="5">
+                
+                <a href="../options/README.html">
+                    <i class="fa fa-check"></i> <b>5)</b> options
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="5.1">
+                            
+                            <a href="../options/basics.html">
+                                <i class="fa fa-check"></i> <b>5.1)</b> basics
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.2">
+                            
+                            <a href="../options/constant.html">
+                                <i class="fa fa-check"></i> <b>5.2)</b> constant
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.3">
+                            
+                            <a href="../options/db.html">
+                                <i class="fa fa-check"></i> <b>5.3)</b> db
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.4">
+                            
+                            <a href="../options/middle-wares.html">
+                                <i class="fa fa-check"></i> <b>5.4)</b> middleWares
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.5">
+                            
+                            <a href="../options/hooks.html">
+                                <i class="fa fa-check"></i> <b>5.5)</b> hooks
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.6">
+                            
+                            <a href="../options/resources.html">
+                                <i class="fa fa-check"></i> <b>5.6)</b> resources
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.7">
+                            
+                            <a href="../options/switchs.html">
+                                <i class="fa fa-check"></i> <b>5.7)</b> switchs
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="6">
+                
+                <a href="../resource/README.html">
+                    <i class="fa fa-check"></i> <b>6)</b> resource
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="6.1">
+                            
+                            <a href="../resource/methods.html">
+                                <i class="fa fa-check"></i> <b>6.1)</b> methods
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="6.2">
+                            
+                            <a href="../resource/associations.html">
+                                <i class="fa fa-check"></i> <b>6.2)</b> associations
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="6.3">
+                            
+                            <a href="../resource/attributes.html">
+                                <i class="fa fa-check"></i> <b>6.3)</b> attributes
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+    </ul>
+</div>
+    <div class="book-body" tabindex="-1">
+        <div class="page-wrapper">
+            <div class="book-progress">
+                <div class="bar">
+                    <div class="inner" style="width: 31.57894736842105%;min-width: 26.31578947368421%;"></div>
+                </div>
+                <div class="chapters">
+                
+                    <a href="../README.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+                
+                    <a href="../intro/README.html" title="简介" class="chapter done new-chapter" data-progress="1" style="left: 5.2631578947368425%;"></a>
+                
+                    <a href="../install/README.html" title="安装" class="chapter done new-chapter" data-progress="2" style="left: 10.526315789473685%;"></a>
+                
+                    <a href="../basics/README.html" title="基础知识" class="chapter done new-chapter" data-progress="3" style="left: 15.789473684210526%;"></a>
+                
+                    <a href="../basics/flow.html" title="流程图" class="chapter done " data-progress="3.1" style="left: 21.05263157894737%;"></a>
+                
+                    <a href="../basics/module.html" title="模块组成" class="chapter done " data-progress="3.2" style="left: 26.31578947368421%;"></a>
+                
+                    <a href="../api/README.html" title="自有REST接口" class="chapter done " data-progress="3.3" style="left: 31.57894736842105%;"></a>
+                
+                    <a href="../utils/README.html" title="utils" class="chapter  new-chapter" data-progress="4" style="left: 36.8421052631579%;"></a>
+                
+                    <a href="../options/README.html" title="options" class="chapter  new-chapter" data-progress="5" style="left: 42.10526315789474%;"></a>
+                
+                    <a href="../options/basics.html" title="basics" class="chapter  " data-progress="5.1" style="left: 47.36842105263158%;"></a>
+                
+                    <a href="../options/constant.html" title="constant" class="chapter  " data-progress="5.2" style="left: 52.63157894736842%;"></a>
+                
+                    <a href="../options/db.html" title="db" class="chapter  " data-progress="5.3" style="left: 57.89473684210526%;"></a>
+                
+                    <a href="../options/middle-wares.html" title="middleWares" class="chapter  " data-progress="5.4" style="left: 63.1578947368421%;"></a>
+                
+                    <a href="../options/hooks.html" title="hooks" class="chapter  " data-progress="5.5" style="left: 68.42105263157895%;"></a>
+                
+                    <a href="../options/resources.html" title="resources" class="chapter  " data-progress="5.6" style="left: 73.6842105263158%;"></a>
+                
+                    <a href="../options/switchs.html" title="switchs" class="chapter  " data-progress="5.7" style="left: 78.94736842105263%;"></a>
+                
+                    <a href="../resource/README.html" title="resource" class="chapter  new-chapter" data-progress="6" style="left: 84.21052631578948%;"></a>
+                
+                    <a href="../resource/methods.html" title="methods" class="chapter  " data-progress="6.1" style="left: 89.47368421052632%;"></a>
+                
+                    <a href="../resource/associations.html" title="associations" class="chapter  " data-progress="6.2" style="left: 94.73684210526316%;"></a>
+                
+                    <a href="../resource/attributes.html" title="attributes" class="chapter  " data-progress="6.3" style="left: 100%;"></a>
+                
+                </div>
+            </div>
+
+            <div class="page-inner">
+            
+                <section class="normal" id="section-gitbook_2">
+                
+                    <h1 id="-api-">自有api接口</h1>
+<h2 id="open-rest-api-">open-rest 默认提供了两个api接口，风别是</h2>
+<ul>
+<li><p>/apis 返回系统提供的所有接口的列表</p>
+<pre><code class="lang-javascript">[{
+  verb: <span class="hljs-string">"get"</span>, <span class="hljs-comment">// verb http 动作可能的取值是 `get`, `post`, `put`, `patch`, `delete`</span>
+  path: <span class="hljs-string">"/blogs"</span>, <span class="hljs-comment">// 监听的路径或者说路由</span>
+  roles:[] <span class="hljs-comment">// 允许访问的用户角色，为空是所有的角色都可以访问</span>
+}]
+</code></pre>
+</li>
+<li><p>/resources 返回系统资源的定义的列表</p>
+<pre><code class="lang-javascript">[{
+
+  <span class="hljs-comment">// 资源名称，也是表名，也是model的名称</span>
+  <span class="hljs-comment">// 同时rest api的uri也会通过name来构造,除非有特殊定义collectionUri 或者 detailUri</span>
+  name: <span class="hljs-string">'user'</span>,
+
+  <span class="hljs-comment">// 设置__self 对应的字段名称，用来判断资源是否是自己的，默认是 userId</span>
+  self: <span class="hljs-string">'id'</span>,
+
+  <span class="hljs-comment">// 资源对外提供的方法</span>
+  <span class="hljs-comment">// list 获取资源列表</span>
+  <span class="hljs-comment">// detail 获取某个特定资源的详情</span>
+  <span class="hljs-comment">// add 添加资源</span>
+  <span class="hljs-comment">// modify 修改某个资源描述</span>
+  <span class="hljs-comment">// remove 移除某个资源</span>
+  methods: [{
+    method: <span class="hljs-string">'list'</span>,
+    roles: [<span class="hljs-string">'admin'</span>]
+  }, {
+    method: <span class="hljs-string">'detail'</span>,
+  }, {
+    method: <span class="hljs-string">'add'</span>,
+  }, {
+    method: <span class="hljs-string">'modify'</span>,
+    roles: [<span class="hljs-string">'__self'</span>, <span class="hljs-string">'admin'</span>]
+  }, {
+    method: <span class="hljs-string">'remove'</span>,
+    roles: [<span class="hljs-string">'admin'</span>]
+  }],
+
+  <span class="hljs-comment">// 当前资源和其他资源之间的结合关系</span>
+  associations: [{
+    method: <span class="hljs-string">'hasMany'</span>,
+    model: <span class="hljs-string">'blog'</span>,
+    opts: {
+      foreignKey: <span class="hljs-string">'authorId'</span>,
+      as: <span class="hljs-string">'blogs'</span>
+    },
+  }],
+
+  <span class="hljs-comment">// 资源属性的定义，完全参考sequelize 的model 的define</span>
+  <span class="hljs-comment">// type : integer &lt;=&gt; Sequelize.INTEGER</span>
+  attributes: {
+    id: {
+      type: <span class="hljs-string">'integer'</span>,
+      unsigned: <span class="hljs-literal">true</span>,
+      primaryKey: <span class="hljs-literal">true</span>,
+      autoIncrement: <span class="hljs-literal">true</span>
+    },
+    name: {
+      type: <span class="hljs-string">'string'</span>,
+      unique: <span class="hljs-literal">true</span>,
+      validate: {
+        len: [<span class="hljs-number">6</span>, <span class="hljs-number">20</span>]
+      }
+    },
+    role: {
+      type: <span class="hljs-string">'enum'</span>,
+      values: [<span class="hljs-string">'admin'</span>, <span class="hljs-string">'member'</span>],
+      defaultValue: <span class="hljs-string">'member'</span>,
+      <span class="hljs-comment">// 拥有写权限的角色组</span>
+      writebleRoles: [<span class="hljs-string">'admin'</span>]
+    },
+    email: {
+      type: <span class="hljs-string">'string'</span>,
+      unique: <span class="hljs-literal">true</span>,
+      validate: {
+        isEmail: <span class="hljs-literal">true</span>
+      }
+    },
+    gender: {
+      type: <span class="hljs-string">'enum'</span>,
+      values: [<span class="hljs-string">'male'</span>, <span class="hljs-string">'female'</span>],
+      defaultValue: <span class="hljs-string">'male'</span>
+    },
+    birthday: {
+      type: <span class="hljs-string">'date'</span>,
+      validate: {
+        isAfter: <span class="hljs-string">'1900-01-01'</span>,
+        isBefore: <span class="hljs-string">'2014-01-01'</span>
+      }
+    },
+    credit: {
+      type: <span class="hljs-string">'integer'</span>,
+      unsigned: <span class="hljs-literal">true</span>,
+      defaultValue: <span class="hljs-number">10</span>,
+      validate: {
+        min: <span class="hljs-number">0</span>,
+        max: <span class="hljs-number">999999999</span>
+      },
+      <span class="hljs-comment">// 拥有写权限的角色组</span>
+      writebleRoles: [<span class="hljs-string">'admin'</span>]
+    },
+    accessToken: {
+      type: <span class="hljs-string">'string'</span>,
+      validate: {
+        len: [<span class="hljs-number">0</span>, <span class="hljs-number">200</span>]
+      },
+      <span class="hljs-comment">// 是否只读</span>
+      readOnly: <span class="hljs-literal">true</span>,
+      <span class="hljs-comment">// 是否隐藏此字段，隐藏的话，在资源描述中不可见</span>
+      hidden: <span class="hljs-literal">true</span>
+    },
+    intro: {
+      type: <span class="hljs-string">'text'</span>,
+      validate: {
+        len: [<span class="hljs-number">0</span>, <span class="hljs-number">1000</span>]
+      }
+    }
+  }
+}]
+</code></pre>
+</li>
+</ul>
+
+                
+                </section>
+            
+            </div>
+
+            <div class="page-footer">
+                
+                    
+                        
+                        <a href="../utils/README.html" class="navigation-link next">Next</a>
+                        
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-javascript.js"></script>
+        <script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        <script src="../gitbook/app.js"></script>
+    </body>
+</html>
