@@ -316,6 +316,21 @@
   roles: [] <span class="hljs-comment">// 允许的访问的角色白名单</span>
 }
 </code></pre>
+<p><pre> 当 method 为 list 的时候，属性里会增加一下一些可选项</pre></p>
+<ul>
+<li><code>pagination</code> 用来控制分页的一组参数，是一个 object，默认取自 options.list.pagination<ul>
+<li><code>maxResults</code> 默认的返回结果条目数</li>
+<li><code>maxResultsLimit</code> 结果条目数的最大值，客户端请求的时候maxResults 不能超过这个值</li>
+<li><code>maxStartIndex</code> 最大的翻页 offset，避免过大的翻页导致查询 limit 太慢</li>
+</ul>
+</li>
+<li><code>sort</code> list 的排序方式，是一个 object，默认取自 options.list.sort<ul>
+<li><code>default</code> 默认的排序方式，可选参数，数组格式，形如 [&#39;id&#39;, &#39;DESC&#39;] 表示默认 id 降序排列</li>
+<li><code>allow</code> 允许排序的列名称, 数组格式，白名单机制</li>
+</ul>
+</li>
+<li><code>filter</code> 允许过滤的列名称，数组格式，白名单机制</li>
+</ul>
 
                 
                 </section>

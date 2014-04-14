@@ -305,8 +305,8 @@
                 <section class="normal" id="section-gitbook_16">
                 
                     <h1 id="resource">resource</h1>
-<pre> 具体某个资源的描述</pre>
-
+<h3 id="options-resource-resources-resource-resource-options-resource-">options.resource 是 resources 数组中每一个 resource 的默认属性, 每一个resource 未设置的属性都会继承options.resource 的属性</h3>
+<h3 id="resources-resource-">resources 中每一个 resource 的描述如下</h3>
 <ul>
 <li><p><code>name</code> 资源的名称，数据库的表名和资源请求的路径都会受它的影响</p>
 <pre> 例如: 资源名称定义为 user,那么表名就是 users, 获取用户列表就是 /users, 获取某个用户就是 /users/:id</pre>
@@ -318,6 +318,16 @@
 <li><p><code>associations</code> 设置该资源与其他资源之间的关系，详情参考<a href="https://github.com/open-node/open-rest/blob/resource/associations.md" target="_blank">associations</a></p>
 </li>
 <li><code>attributes</code> 设置该资源的属性，详情参考<a href="https://github.com/open-node/open-rest/blob/resource/attributes.md" target="_blank">attributes</a></li>
+<li><code>model2json</code> 函数类型，输出的时候用来处理数据的，<ul>
+<li>arguments<ul>
+<li><code>attrs</code> 经过过滤后的属性值的对象</li>
+<li><code>model</code> 原始的model对象，拥有所有的属性和方法，具体参考 <a href="http://sequelizejs.com/docs/latest/instances" target="_blank">Sequelize model</a></li>
+<li><code>resource</code> open-rest 体系下该资源的定义对象</li>
+</ul>
+</li>
+<li>return 返回一个数据对象</li>
+</ul>
+</li>
 </ul>
 
                 
